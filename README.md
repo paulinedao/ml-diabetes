@@ -25,10 +25,14 @@ git clone https://github.com/paulinedao/ml-diabetes.git
 **Project Structure**
 
 ```
+├── .github/
+│   └── workflows/
+│       └── ci.yml  
 ├── pyproject.toml
 ├── uv.lock
 ├── README.md
 ├── app.py               # FastAPI backend
+├── test_app.py  
 ├── index.html           # Frontend
 ├── predict/
 │   ├── model.pkl        # Trained logistic regression model
