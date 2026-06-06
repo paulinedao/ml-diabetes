@@ -1,4 +1,4 @@
-# template-repo
+# Diabetes prediction
 
 ## Table of Contents
 - [About](#about)
@@ -7,6 +7,8 @@
 - [Authors](#authors)
 
 ## About <a name= "about"></a>
+
+Diabetes prediction using a logistic regression model.
 
 ## Installation <a name= "installation"></a>
 
