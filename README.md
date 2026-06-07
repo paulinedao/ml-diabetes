@@ -74,6 +74,7 @@ git clone https://github.com/paulinedao/ml-diabetes.git
 │       └── ci.yml
 ├── pyproject.toml
 ├── uv.lock
+├── Dockerfile
 ├── README.md
 ├── app.py               # FastAPI backend
 ├── test_app.py  
