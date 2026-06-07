@@ -3,9 +3,9 @@ from pydantic import BaseModel
 import numpy as np
 import joblib
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 
-
-app = FastAPI()
+app = FastAPI()  # ← must come first
 
 app.add_middleware(
     CORSMiddleware,
@@ -31,17 +31,18 @@ class Patient(BaseModel):
     DiabetesPedigreeFunction: float
     Age: float
 
+@app.get("/")  # ← now app exists
+def root():
+    return FileResponse("index.html")
+
 @app.post("/predict")
 def predict_diabetes(patient: Patient):
     import pandas as pd
     
     data = pd.DataFrame([patient.model_dump()])
-    
     data[COLUMNS_TO_IMPUTE] = data[COLUMNS_TO_IMPUTE].replace(0, np.nan)
     data[COLUMNS_TO_IMPUTE] = imputer.transform(data[COLUMNS_TO_IMPUTE])
-    
     data_scaled = scaler.transform(data[ALL_FEATURES])
-    
     prediction = model.predict(data_scaled)[0]
     probability = model.predict_proba(data_scaled)[0][1]
     
