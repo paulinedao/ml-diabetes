@@ -96,23 +96,18 @@ uv sync
 
 ## Usage <a name= "usage"></a>
 
-1. Start the API in terminal 1:
-```
-uv run uvicorn app:app --reload
-```
-
-2. Serve the frontend:
+Deployed in huggingface Space:
 
 ```
-uv run python -m http.server 3000
-``` 
-
-3. Open the app
-
-Go to this link in your browser:
+https://huggingface.co/spaces/paulinedao/diabetes-predictor
 ```
-http://localhost:3000
-``` 
+
+Test FastAPI:
+
+```
+https://paulinedao-diabetes-predictor.hf.space/docs#/
+```
+
 
 <p align="center">
   <img src="images/frontend.png" alt="frontend" width="600"/>
